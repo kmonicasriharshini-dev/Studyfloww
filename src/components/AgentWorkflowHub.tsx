@@ -483,7 +483,7 @@ export const AgentWorkflowHub: React.FC = () => {
           </div>
 
           {/* TAB 1: 10-Day Sprint Plan */}
-          {activeResultTab === 'plan' && (
+          {activeResultTab === 'plan' && workflowResult.generatedPlan && (
             <div className="pt-5 space-y-5">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-indigo-50/40 border border-indigo-100 rounded-xl p-4">
                 <div>
@@ -524,7 +524,7 @@ export const AgentWorkflowHub: React.FC = () => {
 
               {/* Days Timeline */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {workflowResult.generatedPlan.days.map(day => (
+                {workflowResult.generatedPlan.days?.map(day => (
                   <div
                     key={day.dayNumber}
                     className="p-3.5 rounded-xl border border-slate-200/90 hover:border-indigo-300 transition-all bg-white"
@@ -542,7 +542,7 @@ export const AgentWorkflowHub: React.FC = () => {
                     <div className="text-[11px] text-slate-500">{day.focusArea}</div>
 
                     <div className="mt-2.5 pt-2 border-t border-slate-100 space-y-1.5">
-                      {day.topics.map((t, tidx) => (
+                      {day.topics?.map((t, tidx) => (
                         <div key={tidx} className="flex items-center justify-between text-xs">
                           <span className="text-slate-700 line-clamp-1">{t.topicName}</span>
                           <span

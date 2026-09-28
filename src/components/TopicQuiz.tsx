@@ -35,6 +35,17 @@ export const TopicQuiz: React.FC = () => {
     return selectedTopicForQuiz?.id || 'top-dbms-3nf';
   });
 
+  // Sync state if selectedTopicForQuiz changes externally from other tabs
+  React.useEffect(() => {
+    if (selectedTopicForQuiz) {
+      setActiveQuizTopicId(selectedTopicForQuiz.id);
+      setActiveSubjectId(selectedTopicForQuiz.subjectId);
+      setUserAnswers({});
+      setIsSubmitted(false);
+      setUnlockedSuccessName(null);
+    }
+  }, [selectedTopicForQuiz]);
+
   const activeTopic = allSubjectTopics.find(t => t.id === activeQuizTopicId) || allSubjectTopics[0];
 
   // Current questions
