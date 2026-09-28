@@ -1,0 +1,6 @@
+{
+  "name": "StudyFlow - Agentic Study Portal",
+  "description": "Intelligent academic portal for college students to organize syllabus, plan exams, query study notes with RAG, learn with AI Tutor, and unlock progressive mastery quizzes via multi-agent workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
